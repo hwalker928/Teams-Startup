@@ -11,6 +11,6 @@ startup_path = r'C:\Users\\' + username + r'\AppData\Roaming\Microsoft\Windows\S
 
 # Copying + opening
 if not os.path.isfile(startup_path + "\\teams.py"): # If the file isn't already in the startup folder (usually first-time run)
-    copyfile("Teams-Startup-Setup.py", startup_path + "\\teams.py") # Copy this script to the startup folder
+    copyfile(__path__, startup_path + "\\teams.py") # Copy this script to the startup folder
 if datetime.datetime.today().weekday() < 5: # If it is monday - friday
     subprocess.call([r'C:\Users\\' + username + r'\AppData\Local\Microsoft\Teams\current\Teams.exe']) # Open Teams
